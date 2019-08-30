@@ -1,6 +1,6 @@
 package com.tomlettuces.user
 
-import android.databinding.ViewDataBinding
+import androidx.databinding.ViewDataBinding
 import android.text.TextUtils
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.tomlettuces.base.BaseActivity

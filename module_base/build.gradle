@@ -11,7 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
     }
 
@@ -38,39 +38,22 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     // lifecycle
-    api deps.lifecycle.runtime
-    api deps.lifecycle.livedata
-    api deps.lifecycle.viewmodel
-    api deps.lifecycle.extensions
+    api deps.androidx.lifecycle_runtime
+    api deps.androidx.lifecycle_viewmodel
+    api deps.androidx.lifecycle_livedata
+    api deps.androidx.lifecycle_extensions
+    // room
+    api deps.androidx.room_runtime
+    api deps.androidx.room
+    kapt deps.androidx.room_compiler
+    // paging
+    api deps.androidx.paging_runtime
 
-//    // lifecycle
-//    api deps.androidx.lifecycle_runtime
-//    api deps.androidx.lifecycle_viewmodel
-//    api deps.androidx.lifecycle_livedata
-//    api deps.androidx.lifecycle_extensions
-//    // room
-//    api deps.androidx.room_runtime
-//    api deps.androidx.room
-//    kapt deps.androidx.room_compiler
-//    // paging
-//    api deps.androidx.paging_runtime
-//
-//    api deps.androidx.core
-//    api deps.androidx.appcompat
-//    api deps.androidx.constraintlayout
-//    api deps.androidx.fragment
-//    api deps.androidx.recyclerview
-
-    // support
-    api deps.support.v13
-    api deps.support.appcompat
-    api deps.support.recyclerview
-    api deps.support.gridlayout
-    api deps.support.cardview
-    api deps.support.design
-    api deps.support.percent
-    api deps.support.multidex
-    api deps.support.constraint_layout
+    api deps.androidx.core
+    api deps.androidx.appcompat
+    api deps.androidx.constraintlayout
+    api deps.androidx.fragment
+    api deps.androidx.recyclerview
 
     // kotlin
     api deps.kotlin.stdlib
@@ -81,7 +64,8 @@ dependencies {
 
     debugImplementation deps.leakcanary.leakcanary_android
 
-    implementation("com.squareup.okhttp3:okhttp:4.0.0")
+    // network
+    api deps.okhttp3.okhttp
     api deps.retrofit.runtime
     api deps.retrofit.converter_gson
     api deps.retrofit.adapter_rxjava2

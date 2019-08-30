@@ -1,9 +1,9 @@
 package com.tomlettuces.base
 
-import android.arch.lifecycle.ViewModel
-import android.arch.lifecycle.ViewModelProviders
-import android.databinding.ViewDataBinding
+import androidx.databinding.ViewDataBinding
 import android.os.Bundle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProviders
 import java.lang.reflect.ParameterizedType
 
 abstract class BaseSingleModelViewActivity<VM : ViewModel, DB : ViewDataBinding> : BaseActivity<DB>() {
@@ -18,10 +18,13 @@ abstract class BaseSingleModelViewActivity<VM : ViewModel, DB : ViewDataBinding>
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        bindViewModel()
         super.onCreate(savedInstanceState)
-
     }
 
+    /**
+     * viewModel实例化
+     */
     abstract fun bindViewModel()
 
 

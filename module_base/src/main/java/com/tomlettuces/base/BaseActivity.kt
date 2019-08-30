@@ -1,10 +1,10 @@
 package com.tomlettuces.base
 
 import android.content.Context
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 import com.alibaba.android.arouter.launcher.ARouter
 
 abstract class BaseActivity<DB : ViewDataBinding> : AppCompatActivity() {
@@ -18,8 +18,10 @@ abstract class BaseActivity<DB : ViewDataBinding> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mContext = this
-        mBinding.executePendingBindings()
-//        mBinding.lifecycleOwner = this
+        if (mBinding != null) {
+            mBinding.executePendingBindings()
+            mBinding.lifecycleOwner = this
+        }
 
         initView()
         loadData()

@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.tomlettuces.home">
+    <application>
+        <activity
+                android:name="com.tomlettuces.home.ui.HomeActivity"
+                android:launchMode="singleTop"
+        />
+    </application>
+</manifest>

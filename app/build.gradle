@@ -50,4 +50,5 @@ dependencies {
     // ARouter
     api deps.arouter.api
     kapt deps.arouter.compiler
+
 }

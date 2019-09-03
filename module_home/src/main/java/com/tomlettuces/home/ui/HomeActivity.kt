@@ -3,17 +3,13 @@ package com.tomlettuces.home.ui
 import android.util.Log
 import androidx.fragment.app.FragmentManager
 import com.alibaba.android.arouter.facade.annotation.Route
-import com.alibaba.android.arouter.launcher.ARouter
 import com.tomlettuces.base.BaseSingleModelViewActivity
-import com.tomlettuces.base.RouterPath
-import com.tomlettuces.base.ServiceManager
 import com.tomlettuces.base.provider.IHomeProvider
 import com.tomlettuces.home.R
 import com.tomlettuces.home.databinding.ActivityHomeBinding
 import com.tomlettuces.home.viewmodel.HomeViewModel
 import io.reactivex.Observable
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.activity_home.*
 
 @Route(path = IHomeProvider.HOME)
 class HomeActivity : BaseSingleModelViewActivity<HomeViewModel, ActivityHomeBinding>() {
@@ -26,12 +22,9 @@ class HomeActivity : BaseSingleModelViewActivity<HomeViewModel, ActivityHomeBind
 
     override fun initView() {
         mViewModel.changeData()
-        btn_access_login.setOnClickListener {
-            ARouter.getInstance().build(RouterPath.LOGIN).withString("name", "Andy").navigation()
-        }
-        btn_test_login.setOnClickListener {
-            ServiceManager.getUserProvider().login()
-        }
+
+//        clickPresenter()
+
 
 //        btn_access_login.text = "睡觉啊好短发十分艰难".lastChar().toString()
 

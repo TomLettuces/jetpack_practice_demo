@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.tomlettuces.home.viewmodel.RoomViewModel"
+        />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <Button
+                android:id="@+id/btn_add"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:text="add"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btn_test_login"
+                android:onClick="@{(view) -> viewModel.addBtnTransaction()}"/>
+
+        <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:text="delete"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_add"
+                app:layout_constraintEnd_toStartOf="@+id/btn_query"
+                android:onClick="@{(view) -> viewModel.deleteBtnTransaction()}"/>
+
+        <Button
+                android:id="@+id/btn_query"
+                android:layout_width="120dp"
+                android:layout_height="60dp"
+                android:text="queryAll"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/btn_delete"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="@{(view) -> viewModel.queryBtnTransaction()}"/>
+
+        <TextView
+                android:id="@+id/tv_display"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.4"
+                android:text="@{viewModel.userLiveData}"
+        />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -23,7 +23,7 @@ abstract class BaseSingleModelViewActivity<VM : ViewModel, DB : ViewDataBinding>
     }
 
     /**
-     * viewModel实例化
+     * viewModel与databinding绑定
      */
     abstract fun bindViewModel()
 

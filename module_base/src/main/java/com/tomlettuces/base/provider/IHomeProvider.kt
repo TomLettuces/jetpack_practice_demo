@@ -8,6 +8,7 @@ interface IHomeProvider : BaseProvider {
         const val HOME = "/home/home"
         const val SPLASH = "/home/splash"
         const val ROOM = "/home/room"
+        const val COLOR = "/home/color"
 
     }
 

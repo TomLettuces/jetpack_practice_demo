@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.alibaba.android.arouter.launcher.ARouter
-import com.tomlettuces.base.RouterPath
 import com.tomlettuces.base.ServiceManager
 import com.tomlettuces.base.provider.IHomeProvider
 import com.tomlettuces.base.provider.IUserProvider
@@ -49,6 +48,10 @@ class HomeViewModel : ViewModel() {
 
     fun btnClick_2_1() {
         ARouter.getInstance().build(IHomeProvider.ROOM).navigation()
+    }
+
+    fun btnClick_2_2() {
+        ARouter.getInstance().build(IHomeProvider.COLOR).navigation()
     }
 
 }

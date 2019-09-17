@@ -6,5 +6,6 @@
                 android:launchMode="singleTop"
         />
         <activity android:name=".ui.RoomTestActivity"/>
+        <activity android:name=".ui.ColorActivity" />
     </application>
 </manifest>
